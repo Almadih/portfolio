@@ -45,6 +45,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Toaster } from "react-hot-toast";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,6 +57,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} antialiased selection:bg-primary/30`}
       >
+        <Toaster position="bottom-right" />
         {children}
       </body>
     </html>

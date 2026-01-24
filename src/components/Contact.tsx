@@ -2,10 +2,27 @@
 
 import { motion } from "framer-motion";
 import { portfolioData } from "@/lib/data";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { sendEmail } from "@/app/actions/contact";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 const Contact = () => {
     const { contactInfo } = portfolioData;
+    const [isPending, setIsPending] = useState(false);
+
+    async function handleSubmit(formData: FormData) {
+        setIsPending(true);
+        const result = await sendEmail(formData);
+        setIsPending(false);
+
+        if (result.error) {
+            toast.error(result.error);
+        } else {
+            toast.success("Message sent successfully!");
+            (document.getElementById("contact-form") as HTMLFormElement).reset();
+        }
+    }
 
     return (
         <section id="contact" className="py-24 px-6 bg-white/5">
@@ -48,39 +65,58 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className="glass p-8 md:p-12 rounded-[2rem]"
                     >
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form id="contact-form" className="space-y-6" action={handleSubmit}>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-foreground/60 ml-1">Name</label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        required
+                                        disabled={isPending}
                                         placeholder="John Doe"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
                                     />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-foreground/60 ml-1">Email</label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        required
+                                        disabled={isPending}
                                         placeholder="john@example.com"
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
                                     />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-foreground/60 ml-1">Message</label>
                                 <textarea
+                                    name="message"
+                                    required
+                                    disabled={isPending}
                                     rows={4}
                                     placeholder="Tell me about your project..."
-                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors resize-none"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors resize-none disabled:opacity-50"
                                 />
                             </div>
                             <button
                                 type="submit"
-                                className="w-full bg-primary hover:bg-primary/80 text-white font-bold py-4 rounded-2xl transition-all flex items-center justify-center gap-2 group"
+                                disabled={isPending}
+                                className="w-full bg-primary hover:bg-primary/80 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-2xl transition-all flex items-center justify-center gap-2 group"
                             >
-                                Send Message
-                                <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                {isPending ? (
+                                    <>
+                                        Sending...
+                                        <Loader2 size={18} className="animate-spin" />
+                                    </>
+                                ) : (
+                                    <>
+                                        Send Message
+                                        <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    </>
+                                )}
                             </button>
                         </form>
                     </motion.div>
