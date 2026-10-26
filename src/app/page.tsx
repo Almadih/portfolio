@@ -1,23 +1,44 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f] antialiased selection:bg-[#0071e3]/15 selection:text-[#0071e3]">
       <Navbar />
-      <Hero />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Contact />
+      </main>
 
-      <footer className="py-10 text-center text-foreground/40 text-sm">
-        <p>© {new Date().getFullYear()} Mohamed Almadih. Built with Next.js & Tailwind.</p>
+      <footer className="py-12 border-t border-black/[0.08] bg-[#fbfbfd] text-xs text-[#86868b]">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>
+            © {new Date().getFullYear()} Mohamed Almadih. Built with Next.js, React, & Tailwind CSS.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="#projects" className="hover:text-[#1d1d1f] transition-colors">
+              Systems
+            </Link>
+            <Link href="#experience" className="hover:text-[#1d1d1f] transition-colors">
+              Experience
+            </Link>
+            <Link href="#skills" className="hover:text-[#1d1d1f] transition-colors">
+              Disciplines
+            </Link>
+            <Link href="#contact" className="hover:text-[#1d1d1f] transition-colors">
+              Contact
+            </Link>
+          </div>
+        </div>
       </footer>
-    </main>
+    </div>
   );
 }

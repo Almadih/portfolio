@@ -1,226 +1,136 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { portfolioData } from "@/lib/data";
-import { Github, Mail, Globe, Linkedin, ArrowDown } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { portfolioData } from "@/lib/data";
+import { ArrowUpRight, Github, Linkedin, Mail, Globe } from "lucide-react";
 
 const Hero = () => {
-    const { greeting, socialMediaLinks } = portfolioData;
-    const heroRef = useRef<HTMLElement>(null);
+  const { greeting, socialMediaLinks } = portfolioData;
 
-    useEffect(() => {
-        let rafId: number;
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!heroRef.current) return;
-            const rect = heroRef.current.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+  return (
+    <section className="relative pt-20 md:pt-28 pb-16 md:pb-24 px-6 overflow-hidden">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Availability Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0071e3]/10 text-[#0071e3] text-xs font-semibold tracking-wide uppercase mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
+          <span>Available for senior roles & consulting</span>
+          <span className="text-[#86868b] font-normal normal-case hidden sm:inline">
+            • Riyadh / Remote
+          </span>
+        </div>
 
-            cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-                if (heroRef.current) {
-                    heroRef.current.style.setProperty("--mouse-x", `${x}px`);
-                    heroRef.current.style.setProperty("--mouse-y", `${y}px`);
-                }
-            });
-        };
+        {/* Display Headline */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1d1d1f] leading-[1.08] mb-8">
+          Engineering software systems with precision and scale.
+        </h1>
 
-        window.addEventListener("mousemove", handleMouseMove, { passive: true });
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-            cancelAnimationFrame(rafId);
-        };
-    }, []);
+        {/* Supporting Narrative */}
+        <p className="text-lg md:text-xl text-[#6e6e73] font-normal leading-relaxed max-w-2xl mx-auto mb-10">
+          Senior Software Engineer with 7+ years architecting resilient backend infrastructure, distributed scrapers ingesting 500GB+ daily data, and high-throughput microservices using Python, Laravel, PostgreSQL, and Docker.
+        </p>
 
-    return (
-        <section
-            ref={heroRef}
-            className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 overflow-hidden"
-            style={
-                {
-                    "--mouse-x": "50%",
-                    "--mouse-y": "40%",
-                } as React.CSSProperties
-            }
-        >
-            {/* Background Effects */}
-            <div className="absolute inset-0 -z-10">
-                <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+        {/* Primary Actions with Apple Fluid Spring Feel */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+          <Link
+            href={greeting.resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-7 py-3.5 rounded-full bg-[#0071e3] text-white text-sm font-semibold hover:bg-[#0077ed] active:scale-[0.96] transition-all duration-150 flex items-center gap-2 shadow-sm"
+          >
+            <span>Download Resume</span>
+            <ArrowUpRight size={16} />
+          </Link>
 
-                {/* Hardware-accelerated Spotlight effect via CSS custom properties */}
-                <div
-                    className="pointer-events-none absolute inset-0 opacity-50 transition-opacity duration-300"
-                    style={{
-                        background:
-                            "radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(99, 102, 241, 0.18), transparent 80%)",
-                    }}
-                />
+          <Link
+            href="#contact"
+            className="px-7 py-3.5 rounded-full bg-white text-[#1d1d1f] border border-black/[0.08] text-sm font-semibold hover:bg-[#f5f5f7] active:scale-[0.96] transition-all duration-150"
+          >
+            Get in Touch
+          </Link>
 
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        x: [0, 80, 0],
-                        y: [0, 40, 0],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
-                    className="absolute -top-[10%] -left-[10%] w-[45%] h-[45%] bg-primary/20 rounded-full blur-[120px] pointer-events-none"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.25, 1],
-                        x: [0, -80, 0],
-                        y: [0, -40, 0],
-                    }}
-                    transition={{
-                        duration: 25,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
-                    className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] bg-secondary/20 rounded-full blur-[120px] pointer-events-none"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.15, 1],
-                        x: [0, 40, 0],
-                        y: [0, 60, 0],
-                    }}
-                    transition={{
-                        duration: 18,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
-                    className="absolute -bottom-[10%] left-[20%] w-[35%] h-[35%] bg-accent/20 rounded-full blur-[120px] pointer-events-none"
-                />
+          {/* Social Links */}
+          <div className="flex items-center gap-2 sm:ml-2">
+            <SocialLink
+              href={socialMediaLinks.github}
+              icon={<Github size={18} />}
+              label="GitHub"
+            />
+            <SocialLink
+              href={socialMediaLinks.linkedin}
+              icon={<Linkedin size={18} />}
+              label="LinkedIn"
+            />
+            <SocialLink
+              href={`mailto:${socialMediaLinks.gmail}`}
+              icon={<Mail size={18} />}
+              label="Email"
+            />
+          </div>
+        </div>
+
+        {/* Apple Hardware/Spec Sheet Bar */}
+        <div className="rounded-3xl border border-black/[0.08] bg-white p-6 md:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-black/[0.06]">
+            <div className="pt-2 md:pt-0">
+              <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-1">
+                7+ <span className="text-sm font-normal text-[#86868b]">years</span>
+              </div>
+              <div className="text-xs font-medium text-[#86868b]">
+                Production Engineering
+              </div>
             </div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-center max-w-4xl z-10"
-            >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold uppercase tracking-widest text-primary mb-6"
-                >
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Available for senior roles & consulting
-                </motion.div>
+            <div className="pt-4 md:pt-0">
+              <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#0071e3] mb-1">
+                500GB+
+              </div>
+              <div className="text-xs font-medium text-[#86868b]">
+                Daily Scraped Data
+              </div>
+            </div>
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-5xl md:text-7xl font-bold mb-3 tracking-tight font-[family-name:var(--font-outfit)]"
-                >
-                    {greeting.title}
-                </motion.h1>
+            <div className="pt-4 md:pt-0">
+              <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-1">
+                99.95%
+              </div>
+              <div className="text-xs font-medium text-[#86868b]">
+                Service Availability
+              </div>
+            </div>
 
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-2xl md:text-3xl font-semibold text-gradient mb-6"
-                >
-                    Senior Backend & Full-Stack Engineer
-                </motion.h2>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="text-lg md:text-xl text-foreground/75 mb-10 leading-relaxed max-w-3xl mx-auto font-normal"
-                >
-                    {greeting.subTitle}
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="flex flex-wrap justify-center items-center gap-4"
-                >
-                    <Link
-                        href={greeting.resumeLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-8 py-3.5 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg shadow-primary/25"
-                    >
-                        Download Resume
-                    </Link>
-                    <Link
-                        href="#contact"
-                        className="px-8 py-3.5 rounded-full glass text-foreground font-medium hover:bg-white/10 transition-all transform hover:scale-105"
-                    >
-                        Get in Touch
-                    </Link>
-
-                    <div className="flex items-center gap-3 sm:ml-4">
-                        <SocialLink
-                            href={socialMediaLinks.github}
-                            icon={<Github size={20} />}
-                            label="Mohamed Almadih GitHub Profile"
-                        />
-                        <SocialLink
-                            href={socialMediaLinks.linkedin}
-                            icon={<Linkedin size={20} />}
-                            label="Mohamed Almadih LinkedIn Profile"
-                        />
-                        <SocialLink
-                            href={socialMediaLinks.website}
-                            icon={<Globe size={20} />}
-                            label="Mohamed Almadih Website"
-                        />
-                        <SocialLink
-                            href={`mailto:${socialMediaLinks.gmail}`}
-                            icon={<Mail size={20} />}
-                            label="Email Mohamed Almadih"
-                        />
-                    </div>
-                </motion.div>
-            </motion.div>
-
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="mt-16 text-foreground/40 hover:text-foreground/80 transition-colors"
-            >
-                <Link href="#skills" aria-label="Scroll down to Skills section" className="flex flex-col items-center gap-2">
-                    <span className="text-xs uppercase tracking-widest">Explore</span>
-                    <ArrowDown size={18} className="animate-bounce" />
-                </Link>
-            </motion.div>
-        </section>
-    );
+            <div className="pt-4 md:pt-0">
+              <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-1">
+                10+
+              </div>
+              <div className="text-xs font-medium text-[#86868b]">
+                Production Apps Shipped
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const SocialLink = ({
-    href,
-    icon,
-    label,
+  href,
+  icon,
+  label,
 }: {
-    href: string;
-    icon: React.ReactNode;
-    label: string;
+  href: string;
+  icon: React.ReactNode;
+  label: string;
 }) => (
-    <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={label}
-        className="w-11 h-11 rounded-full glass flex items-center justify-center hover:text-primary hover:border-primary/40 transition-colors"
-    >
-        {icon}
-    </a>
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+    className="w-10 h-10 rounded-full border border-black/[0.08] bg-white text-[#6e6e73] hover:text-[#1d1d1f] hover:border-black/20 flex items-center justify-center active:scale-[0.95] transition-all duration-150"
+  >
+    {icon}
+  </a>
 );
 
 export default Hero;
