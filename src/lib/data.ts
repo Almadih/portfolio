@@ -117,6 +117,13 @@ export const portfolioData = {
   ] as WorkExperience[],
   projects: [
     {
+      projectName: "Hindsight",
+      projectDesc:
+        "High-performance chess review platform analyzing Chess.com & Lichess games with in-browser Stockfish web workers, move classification (Brilliant to Blunder), automated AI coach notes, accuracy metrics, and Cloudflare Python Workers with D1 and KV caching.",
+      tags: ["Python", "FastAPI", "Cloudflare Workers", "Stockfish", "Next.js", "D1 SQL", "Workers AI"],
+      link: "https://hindsight.almadih.dev/",
+    },
+    {
       projectName: "InfraReport",
       projectDesc:
         "Cross-platform mobile app and real-time dashboard for infrastructure damage reporting adopted by 500+ field agents with geotagged photo capture and offline sync. Scalable Laravel backend with PostgreSQL & PostGIS handling 10K+ concurrent requests with sub-second spatial queries.",
