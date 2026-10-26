@@ -68,8 +68,9 @@ const Contact = () => {
                         <form id="contact-form" className="space-y-6" action={handleSubmit}>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-foreground/60 ml-1">Name</label>
+                                    <label htmlFor="contact-name" className="text-sm font-medium text-foreground/60 ml-1">Name</label>
                                     <input
+                                        id="contact-name"
                                         type="text"
                                         name="name"
                                         required
@@ -79,8 +80,9 @@ const Contact = () => {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-foreground/60 ml-1">Email</label>
+                                    <label htmlFor="contact-email" className="text-sm font-medium text-foreground/60 ml-1">Email</label>
                                     <input
+                                        id="contact-email"
                                         type="email"
                                         name="email"
                                         required
@@ -91,8 +93,9 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-foreground/60 ml-1">Message</label>
+                                <label htmlFor="contact-message" className="text-sm font-medium text-foreground/60 ml-1">Message</label>
                                 <textarea
+                                    id="contact-message"
                                     name="message"
                                     required
                                     disabled={isPending}
