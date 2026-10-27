@@ -32,6 +32,7 @@ export const portfolioData = {
     linkedin: "https://linkedin.com/in/almadih",
     gmail: "modialmadih@gmail.com",
     website: "https://almadih.dev",
+    blog: "https://blog.almadih.dev/",
   },
   skillsSection: {
     title: "What I do",
@@ -149,35 +150,11 @@ export const portfolioData = {
       tags: ["Python", "gRPC", "Celery", "Redis", "Event-Driven"],
     },
   ] as ProjectItem[],
-  achievementsSection: {
-    title: "Achievements & Certifications 🏆",
-    subtitle: "Achievements, Certifications, and Award Letters from my journey.",
-    achievements: [
-      {
-        title: "Google Code-In Finalist",
-        subtitle: "Selected as a Google Code-in Finalist from 4000 students from 77 different countries.",
-        image: "/codeInLogo.webp",
-        link: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html",
-      },
-      {
-        title: "Google Assistant Action",
-        subtitle: "Developed 'JavaScript Guru', available on 2 Billion devices worldwide.",
-        image: "/googleAssistantLogo.webp",
-        link: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en",
-      },
-      {
-        title: "PWA Web App Developer",
-        subtitle: "Completed Certification for PWA Web App Development.",
-        image: "/pwaLogo.webp",
-        link: "https://pakistan-olx-1.firebaseapp.com/",
-      },
-    ],
-  },
   contactInfo: {
     title: "Contact Me ☎️",
     subtitle: "Discuss a project, collaborate on system architecture, or just say hi. My inbox is always open.",
     number: "+249-129-709-315",
     email: "modialmadih@gmail.com",
-    location: "Khartoum, Sudan / Alexandria, Egypt",
+    location: "Khartoum, Sudan",
   },
 };

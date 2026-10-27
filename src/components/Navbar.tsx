@@ -41,6 +41,15 @@ const Navbar = () => {
           >
             Disciplines
           </Link>
+          <a
+            href={portfolioData.socialMediaLinks.blog}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#1d1d1f] transition-colors duration-150 inline-flex items-center gap-1"
+          >
+            <span>Blog</span>
+            <ArrowUpRight size={12} className="opacity-70" />
+          </a>
           <Link
             href="#contact"
             className="hover:text-[#1d1d1f] transition-colors duration-150"
@@ -96,6 +105,16 @@ const Navbar = () => {
           >
             Disciplines
           </Link>
+          <a
+            href={portfolioData.socialMediaLinks.blog}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between text-sm font-medium text-[#1d1d1f] py-1.5"
+          >
+            <span>Blog</span>
+            <ArrowUpRight size={14} className="text-[#86868b]" />
+          </a>
           <Link
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}

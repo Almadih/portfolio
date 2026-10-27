@@ -21,7 +21,7 @@ export default function Home() {
       <footer className="py-12 border-t border-black/[0.08] bg-[#fbfbfd] text-xs text-[#86868b]">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
-            © {new Date().getFullYear()} Mohamed Almadih. Built with Next.js, React, & Tailwind CSS.
+            © {new Date().getFullYear()} Mohamed Almadih.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#projects" className="hover:text-[#1d1d1f] transition-colors">
@@ -33,6 +33,14 @@ export default function Home() {
             <Link href="#skills" className="hover:text-[#1d1d1f] transition-colors">
               Disciplines
             </Link>
+            <a
+              href="https://blog.almadih.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#1d1d1f] transition-colors"
+            >
+              Blog
+            </a>
             <Link href="#contact" className="hover:text-[#1d1d1f] transition-colors">
               Contact
             </Link>

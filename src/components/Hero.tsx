@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { portfolioData } from "@/lib/data";
-import { ArrowUpRight, Github, Linkedin, Mail, Globe } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, BookOpen } from "lucide-react";
 
 const Hero = () => {
   const { greeting, socialMediaLinks } = portfolioData;
@@ -14,9 +14,6 @@ const Hero = () => {
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0071e3]/10 text-[#0071e3] text-xs font-semibold tracking-wide uppercase mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
           <span>Available for senior roles & consulting</span>
-          <span className="text-[#86868b] font-normal normal-case hidden sm:inline">
-            • Riyadh / Remote
-          </span>
         </div>
 
         {/* Display Headline */}
@@ -64,6 +61,11 @@ const Hero = () => {
               href={`mailto:${socialMediaLinks.gmail}`}
               icon={<Mail size={18} />}
               label="Email"
+            />
+            <SocialLink
+              href={socialMediaLinks.blog}
+              icon={<BookOpen size={18} />}
+              label="Personal Blog"
             />
           </div>
         </div>
