@@ -140,6 +140,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          defer
+          src="https://stats.almadih.dev/t.js"
+          data-site="almadih"
+        />
       </head>
       <body
         className={`${inter.variable} ${outfit.variable} antialiased selection:bg-primary/30 min-h-screen`}
