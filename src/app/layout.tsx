@@ -25,11 +25,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://almadih.dev"),
   title: {
-    default: "Mohamed Almadih | Senior Backend & Full-Stack Engineer",
+    default: "Mohamed Almadih | Senior Backend Engineer",
     template: "%s | Mohamed Almadih",
   },
   description:
-    "Portfolio of Mohamed Almadih – Senior Backend & Full-Stack Engineer with 7+ years of experience architecting scalable distributed systems, high-throughput microservices, and reliable cloud architectures using Python, Laravel, PostgreSQL, Docker, and AWS.",
+    "Portfolio of Mohamed Almadih, a Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js.",
   keywords: [
     "Mohamed Almadih",
     "Mohamed Ibrahim",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     "Laravel",
     "PostgreSQL",
     "Docker",
-    "AWS",
-    "Microservices",
+    "Node.js",
+    "Cloudflare Workers",
     "Distributed Systems",
     "System Design",
     "Vue.js",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     canonical: "https://almadih.dev",
   },
   openGraph: {
-    title: "Mohamed Almadih | Senior Backend & Full-Stack Engineer",
+    title: "Mohamed Almadih | Senior Backend Engineer",
     description:
-      "Senior Software Engineer with 7+ years of experience in distributed systems, scalable APIs, and cloud architecture with Python, Laravel, PostgreSQL, and Docker.",
+      "Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js.",
     url: "https://almadih.dev",
     siteName: "Mohamed Almadih Portfolio",
     locale: "en_US",
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohamed Almadih | Senior Backend & Full-Stack Engineer",
+    title: "Mohamed Almadih | Senior Backend Engineer",
     description:
-      "Senior Backend Engineer with 7+ years designing distributed systems, high-availability APIs, and automated CI/CD pipelines.",
+      "Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js.",
   },
   robots: {
     index: true,
@@ -91,9 +91,9 @@ const jsonLd = {
       name: "Mohamed Almadih",
       alternateName: "Mohamed Ibrahim Mohamed Ahmed",
       url: "https://almadih.dev",
-      jobTitle: "Senior Backend & Full-Stack Engineer",
+      jobTitle: "Senior Backend Engineer",
       description:
-        "Senior Software Engineer with 7+ years of experience designing and building scalable backend systems, microservices, and reliable cloud architectures.",
+        "Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js.",
       sameAs: [
         "https://github.com/almadih",
         "https://linkedin.com/in/almadih",
@@ -106,7 +106,7 @@ const jsonLd = {
         "PostgreSQL",
         "PostGIS",
         "Docker",
-        "AWS",
+        "Cloudflare Workers",
         "Distributed Systems",
         "RESTful APIs",
         "CI/CD Automation",
@@ -120,7 +120,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://almadih.dev/#website",
       url: "https://almadih.dev",
-      name: "Mohamed Almadih | Senior Backend & Full-Stack Engineer",
+      name: "Mohamed Almadih | Senior Backend Engineer",
       publisher: {
         "@id": "https://almadih.dev/#person",
       },

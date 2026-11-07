@@ -23,7 +23,7 @@ const Hero = () => {
 
         {/* Supporting Narrative */}
         <p className="text-lg md:text-xl text-[#6e6e73] font-normal leading-relaxed max-w-2xl mx-auto mb-10">
-          Senior Software Engineer with 7+ years architecting resilient backend infrastructure, distributed scrapers ingesting 500GB+ daily data, and high-throughput microservices using Python, Laravel, PostgreSQL, and Docker.
+          {greeting.subTitle}
         </p>
 
         {/* Primary Actions with Apple Fluid Spring Feel */}
@@ -75,7 +75,7 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-black/[0.06]">
             <div className="pt-2 md:pt-0">
               <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-1">
-                7+ <span className="text-sm font-normal text-[#86868b]">years</span>
+                7 <span className="text-sm font-normal text-[#86868b]">years</span>
               </div>
               <div className="text-xs font-medium text-[#86868b]">
                 Production Engineering
@@ -84,28 +84,28 @@ const Hero = () => {
 
             <div className="pt-4 md:pt-0">
               <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#0071e3] mb-1">
-                500GB+
+                ~100K
               </div>
               <div className="text-xs font-medium text-[#86868b]">
-                Daily Scraped Data
+                Websites Crawled a Day
               </div>
             </div>
 
             <div className="pt-4 md:pt-0">
               <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-1">
-                99.95%
+                40K+
               </div>
               <div className="text-xs font-medium text-[#86868b]">
-                Service Availability
+                Telegram Bot Users
               </div>
             </div>
 
             <div className="pt-4 md:pt-0">
               <div className="text-3xl md:text-4xl font-bold tracking-tight text-[#1d1d1f] mb-1">
-                10+
+                ~80%
               </div>
               <div className="text-xs font-medium text-[#86868b]">
-                Production Apps Shipped
+                Test Coverage, Built From Zero
               </div>
             </div>
           </div>

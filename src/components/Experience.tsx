@@ -18,7 +18,7 @@ const Experience = () => {
             Work Experience
           </h2>
           <p className="text-base md:text-lg text-[#6e6e73] leading-relaxed">
-            Proven track record architecting high-throughput backend systems, cloud microservices, and reliable engineering workflows.
+            Seven years of high-ownership work in small, remote teams, from data platforms to legacy rescues.
           </p>
         </div>
 

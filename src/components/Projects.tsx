@@ -17,13 +17,13 @@ const Projects = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <span className="text-xs font-semibold tracking-wider uppercase text-[#0071e3] mb-2 block">
-            Architectural Case Studies
+            Selected Work
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#1d1d1f] mb-4">
-            Featured Systems & Production Engineering
+            Featured Systems & Projects
           </h2>
           <p className="text-base md:text-lg text-[#6e6e73] leading-relaxed">
-            High-throughput distributed pipelines, geospatial query engines, and fault-tolerant financial architectures built for real scale.
+            Live products, data platforms, and side projects, from a Telegram bot with 40,000+ users to a crawler handling about 100,000 websites a day.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ const Projects = () => {
           <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-6">
             <div>
               <span className="text-xs font-semibold tracking-wider uppercase text-[#0071e3] mb-1 block">
-                Production Case Study 0{activeTab + 1}
+                Project 0{activeTab + 1}
               </span>
               <h3 className="text-2xl md:text-4xl font-bold tracking-tight text-[#1d1d1f]">
                 {activeProject.projectName}

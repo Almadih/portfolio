@@ -17,7 +17,7 @@ const Navbar = () => {
             {portfolioData.greeting.username}
           </span>
           <span className="text-xs text-[#86868b] hidden sm:inline font-normal">
-            / Senior Backend & Systems Engineer
+            / Senior Backend Engineer
           </span>
         </Link>
 

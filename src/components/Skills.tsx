@@ -10,26 +10,26 @@ const Skills = () => {
     {
       title: "Backend & Distributed Systems",
       icon: <Server size={22} className="text-[#0071e3]" />,
-      summary: "Architecting high-throughput RESTful APIs, distributed scrapers, and asynchronous queue pipelines.",
-      technologies: ["Python", "Laravel", "PHP", "FastAPI", "Node.js", "Celery", "Microservices", "REST APIs"],
+      summary: "Building REST APIs, distributed crawlers, and asynchronous task pipelines.",
+      technologies: ["PHP", "Python", "SQL", "Laravel", "FastAPI", "Celery", "Node.js (Express)", "REST APIs", "gRPC", "Webhooks", "Authentication"],
     },
     {
-      title: "Databases, Spatial & Caching",
+      title: "Databases & Caching",
       icon: <Database size={22} className="text-[#0071e3]" />,
-      summary: "Designing performant relational schemas, geospatial queries, and low-latency cache layers.",
-      technologies: ["PostgreSQL", "PostGIS", "Redis", "Query Tuning", "Composite Indexing", "Data Partitioning"],
+      summary: "Designing relational schemas, optimizing queries, and adding caching where it counts.",
+      technologies: ["PostgreSQL (PostGIS)", "MySQL", "SQLite", "Cloudflare D1", "Redis", "Prisma"],
     },
     {
-      title: "Cloud Infrastructure & DevOps",
+      title: "Infrastructure & DevOps",
       icon: <Cloud size={22} className="text-[#0071e3]" />,
-      summary: "Automating deployment velocity, containerization, and reliable infrastructure monitoring.",
-      technologies: ["Docker", "AWS (EC2, S3, RDS)", "Linux (Ubuntu/Debian)", "GitHub Actions", "CI/CD", "Pytest"],
+      summary: "Containerized deployments, Linux servers, edge workers, and automated pipelines.",
+      technologies: ["Docker", "Linux", "Nginx", "Cloudflare Workers", "GitHub Actions", "CI/CD"],
     },
     {
       title: "Frontend Engineering & Craft",
       icon: <Terminal size={22} className="text-[#0071e3]" />,
-      summary: "Building fast, fluid, accessible client interfaces with 95+ Lighthouse performance scores.",
-      technologies: ["Vue 3 (Composition API)", "React", "Next.js", "TypeScript", "Tailwind CSS", "Flutter"],
+      summary: "Owning the UI too, with React and Vue.js frontends on top of the APIs.",
+      technologies: ["TypeScript", "JavaScript", "React", "React Query", "Vue.js", "Next.js", "TailwindCSS", "Flutter"],
     },
   ];
 
@@ -45,7 +45,7 @@ const Skills = () => {
             Disciplines & Core Stack
           </h2>
           <p className="text-base md:text-lg text-[#6e6e73] leading-relaxed">
-            Technologies and architectural patterns battle-tested in high-availability production environments.
+            The languages, tools, and practices behind the production systems on this page.
           </p>
         </div>
 

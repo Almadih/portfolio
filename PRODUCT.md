@@ -8,15 +8,15 @@ web
 
 ## Users
 
-Primary: Engineering leaders, VP of Engineering, CTOs, technical recruiters, and enterprise clients seeking a senior backend/systems engineer who can architect high-throughput, fault-tolerant infrastructure and lead full-stack systems.
+Primary: Engineering leaders, VP of Engineering, CTOs, technical recruiters, and enterprise clients seeking a senior backend engineer who takes high ownership of production systems and existing codebases.
 
 ## Product Purpose
 
-Showcase Mohamed Almadih as a high-caliber Senior Backend & Full-Stack Engineer with 7+ years of experience. The site communicates senior technical depth, architectural authority, and high design craft without resorting to generic templates or AI clichés.
+Showcase Mohamed Almadih as a high-caliber Senior Backend Engineer with 7 years of experience. The site communicates senior technical depth, architectural authority, and high design craft without resorting to generic templates or AI clichés.
 
 ## Positioning
 
-Senior engineer with proven execution across extreme scale: distributed web scrapers ingesting 500GB+ daily data, sub-100ms API response time optimization, 99.95% high availability microservices with Python, Laravel, PostgreSQL, Docker, and AWS.
+Senior engineer who builds and runs production systems in Laravel, Python, and Node.js, and takes over neglected codebases to make them tested, secure, and fast. Use only verified facts from the resume; never add unverified metrics.
 
 ## Operating Context
 
@@ -39,9 +39,9 @@ Evaluated by decision-makers on high-resolution desktop displays (1440px+) and m
 
 ## Evidence on Hand
 
-- 7+ years of production backend and full-stack engineering
-- Agilium (Riyadh, Saudi Arabia - Remote): Scalable REST APIs, microservices, 50% response time reduction, 99.95% uptime
-- StrangeLogic (Khartoum - Remote): 500GB+ daily distributed scraping pipelines, sub-second latency
-- Freelance: 12+ custom platforms across fintech, logistics, and SaaS
-- University of Bahri: Honor Bachelor in Information Technology (GPA 3.45)
-- Projects: InfraReport, distributed scrapers, enterprise APIs
+- 7 years of production backend and full-stack engineering
+- Agilium (Riyadh, Saudi Arabia - Remote): Legacy Laravel API modernization, backend tests from zero to about 80% coverage, React Query migration
+- StrangeLogic (Khartoum): Distributed crawler at about 100,000 websites a day and terabyte-scale data
+- Freelance: Live learning platform with about 600 students, plus fintech builds for clients in Sudan and Saudi Arabia
+- University of Bahri: Honors Bachelor in Information Technology (GPA 3.45)
+- Projects: X/Twitter video bot (40,000+ users), Hindsight, Chess Academy, diffcv, Domain Intelligence, Bravo Tango

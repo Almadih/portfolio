@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Mohamed Almadih - Senior Backend & Full-Stack Engineer";
+export const alt = "Mohamed Almadih - Senior Backend Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -66,7 +66,7 @@ export default async function Image() {
               margin: 0,
             }}
           >
-            Senior Backend & Full-Stack Engineer
+            Senior Backend Engineer
           </p>
           <p
             style={{
@@ -77,12 +77,12 @@ export default async function Image() {
               lineHeight: 1.45,
             }}
           >
-            7+ years building scalable distributed systems, high-throughput microservices, and resilient cloud architectures.
+            7 years of building and running production systems in Laravel, Python, and Node.js.
           </p>
         </div>
 
         <div style={{ display: "flex", gap: "12px" }}>
-          {["Python", "Laravel", "PostgreSQL", "Docker", "AWS", "Redis", "500GB+ Ingestion"].map(
+          {["Laravel", "Python", "Node.js", "PostgreSQL", "Redis", "Docker", "Cloudflare Workers"].map(
             (tag) => (
               <div
                 key={tag}

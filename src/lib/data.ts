@@ -14,17 +14,12 @@ export interface ProjectItem {
   link?: string;
 }
 
-export interface SoftwareSkill {
-  skillName: string;
-  icon: string;
-}
-
 export const portfolioData = {
   greeting: {
     username: "Mohamed Almadih",
     title: "Mohamed Almadih",
     subTitle:
-      "Senior Software & Backend Engineer with 7+ years of experience designing and building scalable backend architectures, high-throughput microservices, and reliable cloud systems using Python, Laravel, PostgreSQL, Docker, and AWS.",
+      "Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js. Known for taking over neglected codebases and making them tested, secure, and fast.",
     resumeLink: "/Mohamed Ibrahim - Software Engineer.pdf",
   },
   socialMediaLinks: {
@@ -38,37 +33,19 @@ export const portfolioData = {
     title: "What I do",
     subTitle: "SENIOR BACKEND & FULL-STACK ENGINEER",
     skills: [
-      "⚡ Design and deploy scalable REST APIs & distributed microservices with Laravel, Python, & Node.js",
-      "⚡ Architect secure, high-performance database systems with PostgreSQL, PostGIS, & Redis",
-      "⚡ Build robust automated CI/CD pipelines, containerization with Docker, and cloud deployments",
-      "⚡ Refactor legacy architectures for 50%+ response time reduction and 99.9%+ high availability",
-    ],
-    softwareSkills: [
-      { skillName: "Python", icon: "python" },
-      { skillName: "Laravel", icon: "laravel" },
-      { skillName: "PHP", icon: "php" },
-      { skillName: "PostgreSQL", icon: "database" },
-      { skillName: "Docker", icon: "docker" },
-      { skillName: "TypeScript", icon: "typescript" },
-      { skillName: "JavaScript", icon: "js" },
-      { skillName: "Vue.js", icon: "vue" },
-      { skillName: "React", icon: "react" },
-      { skillName: "Node.js", icon: "node" },
-      { skillName: "Next.js", icon: "next" },
-      { skillName: "Redis", icon: "redis" },
-      { skillName: "Linux", icon: "linux" },
-      { skillName: "CI/CD", icon: "cicd" },
-      { skillName: "Flutter", icon: "flutter" },
-      { skillName: "AWS", icon: "aws" },
+      "⚡ Build and run production APIs and data pipelines with Laravel, Python, and Node.js",
+      "⚡ Take over legacy codebases and refactor them in steps, without pausing feature delivery",
+      "⚡ Introduce automated testing where none exists, and make it a safety net for releases",
+      "⚡ Find and fix slow queries with indexing, partitioning, and caching as usage grows",
     ],
   },
   educationInfo: {
     schools: [
       {
         schoolName: "University of Bahri",
-        subHeader: "Honor Bachelor in Information Technology",
+        subHeader: "Honors Bachelor in Information Technology",
         duration: "2021",
-        desc: "GPA: 3.45 | Honor Degree",
+        desc: "GPA: 3.45",
       },
     ],
   },
@@ -78,76 +55,82 @@ export const portfolioData = {
       company: "Agilium",
       location: "Riyadh, Saudi Arabia - Remote",
       date: "March 2025 - Present",
-      desc: "Engineering scalable REST APIs, backend microservices, and automated CI/CD pipelines supporting 10+ production applications.",
+      desc: "Procurement planning and process automation platform (Laravel API, React frontend). Small team that also delivers client projects.",
       highlights: [
-        "Designed and deployed scalable REST APIs and backend microservices using Laravel and PostgreSQL, supporting 10+ production applications and 20+ third-party integrations, achieving 50% reduction in response time and 99.95% uptime.",
-        "Optimized backend services by refactoring legacy code and implementing design patterns, resulting in a 30% reduction in response time and 45% improvement in maintainability via Python, Redis, and unit tests.",
-        "Refactored frontend components using Vue 3 Composition API, cutting load time by 40% and raising Lighthouse performance score from 70 to 95.",
-        "Engineered automated CI/CD pipelines using Docker and GitHub Actions, cutting deployment time by 70% and increasing deployment frequency from weekly to daily.",
-        "Achieved 85% test coverage and reduced regression bugs by 70% by implementing unit and integration tests using Pytest.",
-      ],
-    },
-    {
-      role: "Software Engineer",
-      company: "Freelancer",
-      location: "Khartoum | Remote",
-      date: "October 2019 - Present",
-      desc: "Architected 12+ custom web applications and secure backend systems for fintech, logistics, e-commerce, and SaaS clients.",
-      highlights: [
-        "Architected and implemented 12+ custom web applications using Python, Node.js, Vue.js, React, and Flutter, optimizing backend performance by 40% and reducing page load times by 50%.",
-        "Architected secure, scalable backend systems and RESTful APIs using Python, Node.js, and PostgreSQL, achieving 99.9% uptime and reducing infrastructure costs by 30%.",
-        "Engineered and integrated 20+ payment gateways, authentication systems, and third-party APIs into production with automated testing.",
-        "Engineered high-performance backend systems achieving sub-100ms API response times through advanced database indexing and query optimization.",
-        "Guided 12+ projects from conception to production with Agile methodologies and CI/CD pipelines, cutting post-release defects by 35%.",
+        "Drove the modernization of a legacy Laravel API that had no tests, tangled structure, dead code, and unused dependencies. Refactored most of the codebase in steps, without pausing feature delivery.",
+        "Built the backend test suite from zero to about 80% coverage, giving later refactors and releases a safety net.",
+        "Hardened error handling, security, and query performance across every module rewritten.",
+        "Migrated all React data fetching to React Query, adding caching and consistent server-state management.",
+        "Own features end to end, from planning through the Laravel API and the React UI.",
       ],
     },
     {
       role: "Software Engineer",
       company: "StrangeLogic",
-      location: "Khartoum | Remote",
+      location: "Khartoum",
       date: "August 2021 - January 2024",
-      desc: "Built distributed scraping systems, automation scripts, and Linux-optimized backend services handling 500GB+ daily data.",
+      desc: "Startup of about 6 people behind a platform for finding and registering domains.",
       highlights: [
-        "Architected and implemented 20+ Python-based backend services and automation scripts, optimizing API response times by 50% and reducing deployment errors by 25%.",
-        "Architected and optimized production software for Linux using Python and JavaScript, achieving 99.9% uptime and reducing memory usage by 25%.",
-        "Architected distributed data processing and web scraping systems using Python, Scrapy, and Apache Spark, scaling to handle 500GB+ daily data ingestion with sub-second latency.",
-        "Elevated code quality by driving peer code reviews and debugging initiatives that cut production defects by 30%.",
-        "Engineered customer-focused software solutions maintaining 99.9% uptime and sub-200ms response times via microservices architecture.",
+        "Designed and built most of Domain Intelligence, a distributed crawling platform (Python, Celery, Docker) that collected domain and SEO data for a data product.",
+        "Ran it in production at about 100,000 websites a day and terabyte-scale data. Used data partitioning to keep queries fast as volume grew.",
+        "Built most of Bravo Tango, a data service for LinkedIn profile scraping and email validation, with async processing on Celery and Redis.",
+        "Exposed Bravo Tango through a REST API, a CLI, and webhooks for client integrations, with gRPC between internal services.",
+      ],
+    },
+    {
+      role: "Software Engineer",
+      company: "Freelance",
+      location: "Khartoum",
+      date: "October 2019 - Present",
+      desc: "Backend and fullstack work for clients in Sudan and Saudi Arabia.",
+      highlights: [
+        "Lead engineer on a live Laravel and Vue.js learning platform with about 600 students. Hired in October 2025 for a feature contract, then kept on to own bugs, security, and deployments.",
+        "Fixed slow pages on the platform by optimizing the database queries that degraded as the student base grew.",
+        "Redesigned the platform's entire UI in stages, ending with a new landing page.",
+        "Built backend and frontend for fintech products: a payments platform for a Saudi client (TourPay, Laravel and Vue.js), a money transfer platform (Node.js and Vue.js), and a digital wallet (Node.js and Vue.js).",
+        "Also delivered a store management system (Laravel and React) and a delivery app backend (Node.js).",
       ],
     },
   ] as WorkExperience[],
   projects: [
     {
+      projectName: "X/Twitter Video Bot",
+      projectDesc:
+        "Telegram bot for downloading X/Twitter videos, with 40,000+ users, about 10,000 monthly active users, and 1,000+ downloads a day. Cut database reads as usage grew with covering indexes, indexed UNION queries, and in-memory caching of aggregate stats. Monetized with paid plans, and run through a broadcast engine, channel auto-posting, and an admin dashboard.",
+      tags: ["TypeScript", "Cloudflare Workers", "D1", "Telegram"],
+      link: "https://t.me/twitter_vid_dl_bot",
+    },
+    {
       projectName: "Hindsight",
       projectDesc:
-        "High-performance chess review platform analyzing Chess.com & Lichess games with in-browser Stockfish web workers, move classification (Brilliant to Blunder), automated AI coach notes, accuracy metrics, and Cloudflare Python Workers with D1 and KV caching.",
-      tags: ["Python", "FastAPI", "Cloudflare Workers", "Stockfish", "Next.js", "D1 SQL", "Workers AI"],
+        "Free chess game review tool that grades every move, estimates accuracy and rating, and adds AI coach notes, from a pasted game or a Chess.com or Lichess username. Runs Stockfish in the browser, with a FastAPI service on Cloudflare Workers classifying moves, backed by D1, KV, and Workers AI.",
+      tags: ["Python", "FastAPI", "Cloudflare Workers", "Stockfish", "Next.js", "D1", "Workers AI"],
       link: "https://hindsight.almadih.dev/",
     },
     {
-      projectName: "InfraReport",
+      projectName: "Chess Academy",
       projectDesc:
-        "Cross-platform mobile app and real-time dashboard for infrastructure damage reporting adopted by 500+ field agents with geotagged photo capture and offline sync. Scalable Laravel backend with PostgreSQL & PostGIS handling 10K+ concurrent requests with sub-second spatial queries.",
-      tags: ["Flutter", "Laravel", "PostgreSQL", "PostGIS", "Vue.js", "WebSocket"],
-      link: "https://github.com/Almadih/infra-report-dashboard",
+        "Local-first training app that imports a player's full Chess.com and Lichess history and analyzes every game with Stockfish on background worker threads. Turns the analysis into a training plan: recurring mistakes, opening lines that keep going wrong, and spaced-repetition puzzles built from the player's own errors.",
+      tags: ["Python", "FastAPI", "SQLite", "Stockfish", "Next.js"],
+      link: "https://github.com/Almadih/chess-academy",
+    },
+    {
+      projectName: "diffcv",
+      projectDesc:
+        "AI platform for writing and tailoring resumes and cover letters, ready for launch. Subscription billing on RevenueCat and Stripe with authenticated, idempotent webhooks, and per-user AI quotas that only count usage after a generation succeeds.",
+      tags: ["Next.js", "Prisma", "NextAuth", "Stripe", "RevenueCat"],
     },
     {
       projectName: "Domain Intelligence",
       projectDesc:
-        "Distributed web crawling platform processing over 100,000 websites daily across 50+ data sources. Engineered range and hash data partitioning strategies with optimized APIs, delivering 10x throughput and sub-second latency on terabyte datasets.",
-      tags: ["Python", "Docker", "Bash", "Celery", "Distributed Systems"],
-    },
-    {
-      projectName: "TourPay",
-      projectDesc:
-        "Digital payment platform with wallet functionality processing $2M+ in monthly transactions. Integrated PayPal and Stripe APIs, with OAuth 2.0 and webhook infrastructure enabling seamless integration for 200+ third-party applications.",
-      tags: ["Laravel", "PostgreSQL", "Vue.js", "TypeScript", "Node.js", "Stripe"],
+        "Distributed crawling platform that collected domain and SEO data for a data product. Ran in production at about 100,000 websites a day and terabyte-scale data, with data partitioning to keep queries fast as volume grew.",
+      tags: ["Python", "Celery", "Docker", "Data Partitioning"],
     },
     {
       projectName: "Bravo Tango",
       projectDesc:
-        "Scalable web scraping platform processing 100,000+ LinkedIn profiles daily with 99.9% uptime. High-performance email validation (99.5% accuracy) with Celery, Redis, and event-driven webhook architecture across 30+ microservices.",
-      tags: ["Python", "gRPC", "Celery", "Redis", "Event-Driven"],
+        "Data service for LinkedIn profile scraping and email validation, with async processing on Celery and Redis. Exposed through a REST API, a CLI, and webhooks for client integrations, with gRPC between internal services.",
+      tags: ["Python", "Celery", "Redis", "gRPC", "Webhooks"],
     },
   ] as ProjectItem[],
   contactInfo: {
