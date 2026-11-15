@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/Mohamed%20Ibrahim%20-%20Software%20Engineer.pdf",
+        destination: "/mohamed-almadih-resume.pdf",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
@@ -35,7 +44,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/Mohamed%20Ibrahim%20-%20Software%20Engineer.pdf",
+        source: "/mohamed-almadih-resume.pdf",
         headers: [
           {
             key: "Cache-Control",

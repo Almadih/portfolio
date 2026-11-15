@@ -60,7 +60,7 @@ const Navbar = () => {
 
         {/* Action Button */}
         <div className="hidden sm:flex items-center gap-3">
-          <Link
+          <a
             href={portfolioData.greeting.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -68,7 +68,7 @@ const Navbar = () => {
           >
             <span>Resume</span>
             <ArrowUpRight size={13} />
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -123,7 +123,7 @@ const Navbar = () => {
             Contact
           </Link>
           <div className="pt-2">
-            <Link
+            <a
               href={portfolioData.greeting.resumeLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -131,7 +131,7 @@ const Navbar = () => {
             >
               <span>Download Resume</span>
               <ArrowUpRight size={13} />
-            </Link>
+            </a>
           </div>
         </div>
       )}

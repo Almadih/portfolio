@@ -19,8 +19,8 @@ export const portfolioData = {
     username: "Mohamed Almadih",
     title: "Mohamed Almadih",
     subTitle:
-      "Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js. Known for taking over neglected codebases and making them tested, secure, and fast.",
-    resumeLink: "/Mohamed Ibrahim - Software Engineer.pdf",
+      "Mohamed Almadih (also known as Mohamed Ibrahim) is a Senior Backend Engineer based in Khartoum, Sudan, working remotely, with 7 years of building and running production systems in Laravel, Python, and Node.js. Known for taking over neglected codebases and making them tested, secure, and fast.",
+    resumeLink: "/mohamed-almadih-resume.pdf",
   },
   socialMediaLinks: {
     github: "https://github.com/almadih",

@@ -5,8 +5,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://almadih.dev',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
     },
   ]
 }

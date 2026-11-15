@@ -17,9 +17,14 @@ const Hero = () => {
         </div>
 
         {/* Display Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1d1d1f] leading-[1.08] mb-8">
-          Engineering software systems with precision and scale.
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#1d1d1f] leading-[1.08] mb-4">
+          Mohamed Almadih{" "}
+          <span className="block text-[#6e6e73]">Senior Backend Engineer</span>
         </h1>
+
+        <p className="text-xl md:text-2xl font-semibold text-[#1d1d1f] mb-4">
+          Engineering software systems with precision and scale.
+        </p>
 
         {/* Supporting Narrative */}
         <p className="text-lg md:text-xl text-[#6e6e73] font-normal leading-relaxed max-w-2xl mx-auto mb-10">
@@ -28,7 +33,7 @@ const Hero = () => {
 
         {/* Primary Actions with Apple Fluid Spring Feel */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-          <Link
+          <a
             href={greeting.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -36,7 +41,7 @@ const Hero = () => {
           >
             <span>Download Resume</span>
             <ArrowUpRight size={16} />
-          </Link>
+          </a>
 
           <Link
             href="#contact"

@@ -30,25 +30,6 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of Mohamed Almadih, a Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js.",
-  keywords: [
-    "Mohamed Almadih",
-    "Mohamed Ibrahim",
-    "Senior Backend Engineer",
-    "Full-Stack Developer",
-    "Python",
-    "Laravel",
-    "PostgreSQL",
-    "Docker",
-    "Node.js",
-    "Cloudflare Workers",
-    "Distributed Systems",
-    "System Design",
-    "Vue.js",
-    "FastAPI",
-    "Sudan",
-    "Saudi Arabia",
-    "Remote Engineer",
-  ],
   authors: [{ name: "Mohamed Almadih", url: "https://almadih.dev" }],
   creator: "Mohamed Almadih",
   alternates: {
@@ -91,12 +72,14 @@ const jsonLd = {
       name: "Mohamed Almadih",
       alternateName: "Mohamed Ibrahim Mohamed Ahmed",
       url: "https://almadih.dev",
+      image: "https://almadih.dev/opengraph-image",
       jobTitle: "Senior Backend Engineer",
       description:
         "Senior Backend Engineer with 7 years of building and running production systems in Laravel, Python, and Node.js.",
       sameAs: [
         "https://github.com/almadih",
-        "https://linkedin.com/in/almadih",
+        "https://www.linkedin.com/in/almadih/",
+        "https://blog.almadih.dev/",
       ],
       knowsAbout: [
         "Backend Engineering",
@@ -110,6 +93,9 @@ const jsonLd = {
         "Distributed Systems",
         "RESTful APIs",
         "CI/CD Automation",
+        "Node.js",
+        "TypeScript",
+        "FastAPI",
       ],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -117,10 +103,18 @@ const jsonLd = {
       },
     },
     {
+      "@type": "ProfilePage",
+      "@id": "https://almadih.dev/#profilepage",
+      url: "https://almadih.dev",
+      mainEntity: { "@id": "https://almadih.dev/#person" },
+      isPartOf: { "@id": "https://almadih.dev/#website" },
+    },
+    {
       "@type": "WebSite",
       "@id": "https://almadih.dev/#website",
       url: "https://almadih.dev",
       name: "Mohamed Almadih | Senior Backend Engineer",
+      inLanguage: "en",
       publisher: {
         "@id": "https://almadih.dev/#person",
       },

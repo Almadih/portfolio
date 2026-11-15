@@ -77,7 +77,7 @@ const Experience = () => {
 
         {/* Education Section */}
         <div className="pt-8 border-t border-black/[0.08]">
-          <h3 className="text-2xl font-bold text-[#1d1d1f] mb-6">Education</h3>
+          <h2 className="text-2xl font-bold text-[#1d1d1f] mb-6">Education</h2>
 
           <div className="grid gap-6">
             {educationInfo.schools.map((school, index) => (
@@ -90,7 +90,7 @@ const Experience = () => {
                     <GraduationCap size={24} />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-[#1d1d1f]">{school.schoolName}</h4>
+                    <h3 className="text-lg font-bold text-[#1d1d1f]">{school.schoolName}</h3>
                     <p className="text-sm font-semibold text-[#0071e3]">{school.subHeader}</p>
                     <p className="text-xs text-[#86868b] mt-0.5">{school.desc}</p>
                   </div>

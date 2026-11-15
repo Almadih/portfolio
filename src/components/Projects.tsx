@@ -108,9 +108,9 @@ const Projects = () => {
                   className="rounded-2xl border border-black/[0.08] bg-white p-6 cursor-pointer hover:border-black/20 hover:shadow-md transition-all group active:scale-[0.98]"
                 >
                   <div className="flex justify-between items-start mb-3">
-                    <h4 className="text-lg font-bold text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors">
+                    <h3 className="text-lg font-bold text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors">
                       {project.projectName}
-                    </h4>
+                    </h3>
                     <span className="text-xs font-mono text-[#86868b]">
                       0{originalIndex + 1}
                     </span>
@@ -118,6 +118,18 @@ const Projects = () => {
                   <p className="text-xs text-[#6e6e73] leading-relaxed line-clamp-3 mb-4">
                     {project.projectDesc}
                   </p>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#0071e3] hover:underline mb-4"
+                    >
+                      <span>{project.link.includes("github.com") ? "View Repository" : "Live Application"}</span>
+                      <ArrowUpRight size={12} />
+                    </a>
+                  )}
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.slice(0, 3).map((tag, tIdx) => (
                       <span
