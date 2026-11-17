@@ -19,7 +19,7 @@ export const portfolioData = {
     username: "Mohamed Almadih",
     title: "Mohamed Almadih",
     subTitle:
-      "Mohamed Almadih (also known as Mohamed Ibrahim) is a Senior Backend Engineer based in Khartoum, Sudan, working remotely, with 7 years of building and running production systems in Laravel, Python, and Node.js. Known for taking over neglected codebases and making them tested, secure, and fast.",
+      "Mohamed Ibrahim, better known by the nickname Almadih, is a Senior Backend Engineer based in Khartoum, Sudan, working remotely, with 7 years of building and running production systems in Laravel, Python, and Node.js. Known for taking over neglected codebases and making them tested, secure, and fast.",
     resumeLink: "/mohamed-almadih-resume.pdf",
   },
   socialMediaLinks: {
@@ -103,8 +103,8 @@ export const portfolioData = {
     {
       projectName: "Hindsight",
       projectDesc:
-        "Free chess game review tool that grades every move, estimates accuracy and rating, and adds AI coach notes, from a pasted game or a Chess.com or Lichess username. Runs Stockfish in the browser, with a FastAPI service on Cloudflare Workers classifying moves, backed by D1, KV, and Workers AI.",
-      tags: ["Python", "FastAPI", "Cloudflare Workers", "Stockfish", "Next.js", "D1", "Workers AI"],
+        "Free chess game review tool, on the web and as a Flutter mobile app, that grades every move, estimates accuracy and rating, and adds AI coach notes, from a pasted game or a Chess.com or Lichess username. Runs Stockfish in the browser, with a FastAPI service on Cloudflare Workers classifying moves, backed by D1, KV, and Workers AI.",
+      tags: ["Python", "FastAPI", "Cloudflare Workers", "Stockfish", "Next.js", "Flutter", "D1", "Workers AI"],
       link: "https://hindsight.almadih.dev/",
     },
     {
