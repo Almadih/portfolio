@@ -25,7 +25,7 @@ export const portfolioData = {
   socialMediaLinks: {
     github: "https://github.com/almadih",
     linkedin: "https://linkedin.com/in/almadih",
-    gmail: "modialmadih@gmail.com",
+    gmail: "contact@almadih.dev",
     website: "https://almadih.dev",
     blog: "https://blog.almadih.dev/",
   },
@@ -137,7 +137,7 @@ export const portfolioData = {
     title: "Contact Me ☎️",
     subtitle: "Discuss a project, collaborate on system architecture, or just say hi. My inbox is always open.",
     number: "+249-129-709-315",
-    email: "modialmadih@gmail.com",
+    email: "contact@almadih.dev",
     location: "Khartoum, Sudan",
   },
 };
