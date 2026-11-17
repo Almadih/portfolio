@@ -5,12 +5,24 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(formData: FormData) {
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const message = formData.get("message") as string;
+  // Honeypot filled in: a bot. Pretend success so it doesn't retry.
+  if (formData.get("company")) {
+    return { success: true };
+  }
+
+  const name = String(formData.get("name") ?? "").trim();
+  const email = String(formData.get("email") ?? "").trim();
+  const message = String(formData.get("message") ?? "").trim();
 
   if (!name || !email || !message) {
     return { error: "Please fill in all fields." };
+  }
+  // Mirrors the form's maxlength; the browser check can be bypassed
+  if (name.length > 100 || email.length > 254 || message.length > 5000) {
+    return { error: "Your message is too long." };
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return { error: "Please enter a valid email address." };
   }
 
   try {

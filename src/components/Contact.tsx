@@ -62,62 +62,72 @@ const Contact = () => {
 
           {/* Right Column: Contact Form */}
           <div className="rounded-3xl border border-black/[0.08] bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
-            <h3 className="text-xl font-bold text-[#1d1d1f] mb-2">Send a Message</h3>
+            <h3 id="contact-form-title" className="text-xl font-bold text-[#1d1d1f] mb-2">Send a Message</h3>
             <p className="text-xs text-[#6e6e73] mb-8">
               Typically responding within 24 hours.
             </p>
 
-            <form id="contact-form" className="space-y-5" action={handleSubmit}>
+            <form id="contact-form" aria-labelledby="contact-form-title" className="space-y-5" action={handleSubmit}>
+              {/* Honeypot: hidden from people and assistive tech; bots that fill it are dropped server-side */}
+              <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+                <label htmlFor="contact-company">Company</label>
+                <input id="contact-company" type="text" name="company" tabIndex={-1} autoComplete="off" />
+              </div>
               <div className="grid md:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
                   <label htmlFor="contact-name" className="text-xs font-semibold text-[#1d1d1f]">
-                    Name
+                    Name <span aria-hidden="true" className="text-[#0071e3]">*</span>
                   </label>
                   <input
                     id="contact-name"
                     type="text"
                     name="name"
+                    autoComplete="name"
+                    maxLength={100}
                     required
                     disabled={isPending}
                     placeholder="John Doe"
-                    className="w-full bg-[#fbfbfd] border border-black/[0.1] rounded-2xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-2 focus:ring-[#0071e3]/10 transition-all disabled:opacity-50"
+                    className="w-full bg-[#fbfbfd] border border-black/[0.1] rounded-2xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-2 focus:ring-[#0071e3]/10 user-invalid:border-red-500 user-invalid:focus:ring-red-500/10 transition-all disabled:opacity-50"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label htmlFor="contact-email" className="text-xs font-semibold text-[#1d1d1f]">
-                    Email
+                    Email <span aria-hidden="true" className="text-[#0071e3]">*</span>
                   </label>
                   <input
                     id="contact-email"
                     type="email"
                     name="email"
+                    autoComplete="email"
+                    maxLength={254}
                     required
                     disabled={isPending}
                     placeholder="john@example.com"
-                    className="w-full bg-[#fbfbfd] border border-black/[0.1] rounded-2xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-2 focus:ring-[#0071e3]/10 transition-all disabled:opacity-50"
+                    className="w-full bg-[#fbfbfd] border border-black/[0.1] rounded-2xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-2 focus:ring-[#0071e3]/10 user-invalid:border-red-500 user-invalid:focus:ring-red-500/10 transition-all disabled:opacity-50"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
                 <label htmlFor="contact-message" className="text-xs font-semibold text-[#1d1d1f]">
-                  Project Details
+                  Project Details <span aria-hidden="true" className="text-[#0071e3]">*</span>
                 </label>
                 <textarea
                   id="contact-message"
                   name="message"
+                  maxLength={5000}
                   required
                   disabled={isPending}
                   rows={4}
                   placeholder="Tell me about your system requirements, timeline, and goals..."
-                  className="w-full bg-[#fbfbfd] border border-black/[0.1] rounded-2xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-2 focus:ring-[#0071e3]/10 transition-all resize-none disabled:opacity-50"
+                  className="w-full bg-[#fbfbfd] border border-black/[0.1] rounded-2xl px-4 py-3 text-sm text-[#1d1d1f] focus:outline-none focus:border-[#0071e3] focus:ring-2 focus:ring-[#0071e3]/10 user-invalid:border-red-500 user-invalid:focus:ring-red-500/10 transition-all resize-none disabled:opacity-50"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isPending}
-                className="w-full bg-[#0071e3] hover:bg-[#0077ed] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded-full transition-all duration-150 active:scale-[0.97] flex items-center justify-center gap-2 shadow-sm text-sm"
+                className="w-full bg-[#0071e3] hover:bg-[#0077ed] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded-full transition-all duration-150 motion-safe:active:scale-[0.97] flex items-center justify-center gap-2 shadow-sm text-sm"
               >
                 {isPending ? (
                   <>
@@ -151,7 +161,7 @@ const ContactCard = ({
   href?: string;
 }) => {
   const content = (
-    <div className="flex items-center gap-4 p-4 rounded-2xl border border-black/[0.06] bg-white hover:border-black/20 hover:shadow-sm transition-all group active:scale-[0.98]">
+    <div className="flex items-center gap-4 p-4 rounded-2xl border border-black/[0.06] bg-white hover:border-black/20 hover:shadow-sm transition-all group motion-safe:active:scale-[0.98]">
       <div className="w-11 h-11 rounded-xl bg-[#0071e3]/10 flex items-center justify-center shrink-0">
         {icon}
       </div>

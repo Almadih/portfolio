@@ -37,7 +37,7 @@ const Hero = () => {
             href={greeting.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-7 py-3.5 rounded-full bg-[#0071e3] text-white text-sm font-semibold hover:bg-[#0077ed] active:scale-[0.96] transition-all duration-150 flex items-center gap-2 shadow-sm"
+            className="px-7 py-3.5 rounded-full bg-[#0071e3] text-white text-sm font-semibold hover:bg-[#0077ed] motion-safe:active:scale-[0.96] transition-all duration-150 flex items-center gap-2 shadow-sm"
           >
             <span>Download Resume</span>
             <ArrowUpRight size={16} />
@@ -45,7 +45,7 @@ const Hero = () => {
 
           <Link
             href="#contact"
-            className="px-7 py-3.5 rounded-full bg-white text-[#1d1d1f] border border-black/[0.08] text-sm font-semibold hover:bg-[#f5f5f7] active:scale-[0.96] transition-all duration-150"
+            className="px-7 py-3.5 rounded-full bg-white text-[#1d1d1f] border border-black/[0.08] text-sm font-semibold hover:bg-[#f5f5f7] motion-safe:active:scale-[0.96] transition-all duration-150"
           >
             Get in Touch
           </Link>
@@ -134,7 +134,7 @@ const SocialLink = ({
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="w-10 h-10 rounded-full border border-black/[0.08] bg-white text-[#6e6e73] hover:text-[#1d1d1f] hover:border-black/20 flex items-center justify-center active:scale-[0.95] transition-all duration-150"
+    className="w-10 h-10 rounded-full border border-black/[0.08] bg-white text-[#6e6e73] hover:text-[#1d1d1f] hover:border-black/20 flex items-center justify-center motion-safe:active:scale-[0.95] transition-all duration-150"
   >
     {icon}
   </a>

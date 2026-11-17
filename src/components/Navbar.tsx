@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { portfolioData } from "@/lib/data";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  // In-page links don't light-dismiss a popover, so close it on navigation
+  const closeMenu = () => menuRef.current?.hidePopover();
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#fbfbfd]/85 border-b border-black/[0.08] transition-all duration-200">
@@ -64,7 +67,7 @@ const Navbar = () => {
             href={portfolioData.greeting.resumeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#1d1d1f] text-white hover:bg-[#0071e3] active:scale-95 transition-all duration-150 flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#1d1d1f] text-white hover:bg-[#0071e3] motion-safe:active:scale-95 transition-all duration-150 flex items-center gap-1.5"
           >
             <span>Resume</span>
             <ArrowUpRight size={13} />
@@ -73,34 +76,42 @@ const Navbar = () => {
 
         {/* Mobile Hamburger */}
         <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          type="button"
+          popoverTarget="mobile-menu"
+          aria-controls="mobile-menu"
+          aria-expanded={mobileMenuOpen}
           className="md:hidden p-2 text-[#1d1d1f] hover:text-[#0071e3] transition-colors"
-          aria-label="Toggle menu"
+          aria-label="Menu"
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
         </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-b border-black/[0.08] bg-[#fbfbfd] px-6 py-4 space-y-3">
+      <div
+        ref={menuRef}
+        id="mobile-menu"
+        popover="auto"
+        onToggle={(e) => setMobileMenuOpen(e.currentTarget.matches(":popover-open"))}
+        className="md:hidden fixed inset-x-0 top-14 bottom-auto m-0 w-full border-0 border-b border-black/[0.08] bg-[#fbfbfd] px-6 py-4 space-y-3"
+      >
           <Link
             href="#projects"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMenu}
             className="block text-sm font-medium text-[#1d1d1f] py-1.5"
           >
             Systems & Work
           </Link>
           <Link
             href="#experience"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMenu}
             className="block text-sm font-medium text-[#1d1d1f] py-1.5"
           >
             Experience
           </Link>
           <Link
             href="#skills"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMenu}
             className="block text-sm font-medium text-[#1d1d1f] py-1.5"
           >
             Disciplines
@@ -109,7 +120,7 @@ const Navbar = () => {
             href={portfolioData.socialMediaLinks.blog}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMenu}
             className="flex items-center justify-between text-sm font-medium text-[#1d1d1f] py-1.5"
           >
             <span>Blog</span>
@@ -117,7 +128,7 @@ const Navbar = () => {
           </a>
           <Link
             href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMenu}
             className="block text-sm font-medium text-[#1d1d1f] py-1.5"
           >
             Contact
@@ -133,8 +144,7 @@ const Navbar = () => {
               <ArrowUpRight size={13} />
             </a>
           </div>
-        </div>
-      )}
+      </div>
     </header>
   );
 };
